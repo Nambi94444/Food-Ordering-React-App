@@ -32,15 +32,15 @@ const Checkout = (props) => {
     const isFormvalid =
       nameisvalid && addressisvalid && postalisvalid && cityisvalid;
 
-    if (!isFormvalid) {
-      return;
-    }
     setstate({
       name: nameisvalid,
       street: addressisvalid,
       city: cityisvalid,
       postalcode: postalisvalid,
     });
+    if (!isFormvalid) {
+      return;
+    }
     console.log("me");
     props.onConfirm({
       name: enteredname,
